@@ -1,0 +1,19 @@
+
+<script src="~/Content/Js/Login/login.js"></script>
+<div id="accesspanel">
+    <h1 id="litheader">Enkaizen</h1>
+    <div class="inset">
+        <p>
+            <input type="text" name="username" id="email" placeholder="Email address"  [(ngModel)]="securityService.userModel.userName">
+
+        </p>
+        <p>
+            <input type="password" name="password" id="password" placeholder="Access code" [(ngModel)]="securityService.userModel.password">
+           
+        </p>
+     
+    </div>
+    <p class="p-container">
+        <button id="Submit" (click)="login()">Log in</button>
+    </p>
+</div>

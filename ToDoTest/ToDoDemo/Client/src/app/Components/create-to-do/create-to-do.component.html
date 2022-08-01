@@ -1,0 +1,33 @@
+
+    <div class="todos">
+
+      <div>
+        <div>
+            <input [(ngModel)]="toDOService.taskModel.name" (keyup.enter)="newTodo=''" class="textfield" name="newTodo">
+            <button  (click)="addTodo()" *ngIf="isAdmin == 'true'" [disabled]="newTodo===''">Add Todo</button>
+        </div>
+      </div>
+
+      <div [hidden]="newTodo">
+        Type in a new todo...
+      </div>
+
+      <div [hidden]="!newTodo">
+        <!-- Another two-way binding example -->
+        Typing: {{ newTodo }}
+      </div>
+
+    <ul>
+        <li *ngFor="let todo of taskList; let i=index">
+            <input type="checkbox" class="checkbox" (change)="taskCheck(todo.id,todo.isCompleted)" [(ngModel)]="todo.isCompleted" />
+            <span [ngClass]="{'checked': todo.isCompleted}">{{ todo.name }}  </span>
+            <span (click)="deleteTodo(i)" class="delete-icon" style="cursor: pointer" *ngIf="isAdmin == 'true'"><a>---[X]</a></span>
+        </li>
+    </ul>
+
+  </div>
+
+
+    
+    
+
