@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
          
         }
       },
-      (err)=>{}
+      (err)=>{
+        alert("Invalid User Name or Password");
+      }
     )
   }
 
